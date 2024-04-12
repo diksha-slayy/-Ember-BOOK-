@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<div class="navbar">
+<nav>
+  <ul>
+    <li><a href="helloworld">Fiction Books</a></li>
+    <li><a href="room">New Arrivals</a></li>
+    <li><a href="aboutus">Contact Us</a></li>
+    <!-- <img src="https://img.freepik.com/premium-photo/historical-reading-room-journey-knowledge_882186-7215.jpg" alt="welcome to my book store" width="50" height="50"> -->
+  <!-- <img src="https://th.bing.com/th/id/OIP.KX75L2IeHaEzf-PefumOFgAAAA?pid=ImgDet&w=197&h=138&c=7&dpr=1.3" alt="welcome to my book store" width="50" height="50">-->
+</ul>
+</nav>
+</div>
+</body>
+<style>
+
+.navbar img:hover {
+  transform: scale(1.1) rotateX(10deg) rotateY(10deg);
+  transition: transform 0.3s ease-out;
+}
+
+.ember h2{
+  color:rgb(0, 0, 0);
+  font-size:30px;
+  margin-left:39%;
+  font-style:italic;
+  padding:0;
+}
+.navbar ul{
+    font-size:21px;
+        list-style-type:none;
+        overflow:hidden;
+        background-color: rgb(155, 70, 9);
+        border: 5px;
+        border-style:ridge;
+        border-color: rgb(92, 40, 1);
+        
+    }
+
+.navbar ul li {
+  float:left;
+  font-size:15px;
+  padding:5px;
+
+}
+
+.navbar ul li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding:11px 11px 5px 0px;
+  text-decoration:double;
+}
+
+.navbar ul li a:hover {
+  transform:scale(0.9);
+}
+
+
+</style>
+</head>
+</html>
+
+<!-- above code is for template inheritance with datadiplay.html as a source file -->
+<!-- below code is for css of data in datadiplay.html as a source file to display the data in card forms hehehhaha-->
+<style>
+.card-container {
+     display:flex;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+ 
+.card{
+     width: 300px;
+     border: 1px solid #762902;
+     margin: 20px;
+     padding:30px;
+     justify-content: center;
+     box-shadow: 5px 5px 8px rgba(146, 51, 4, 0.1);
+     border-width:5px 5px 5px 5px;
+     border-radius: 9px;
+     list-style-type:decimal-leading-zero;
+   }
+.card p {
+     margin-top:10px;
+     color:rgb(254, 254, 254);
+   }
+.card li{
+    font-size:20px;
+    justify-content: center;
+
+  }
+.card:hover {
+  transform: scale(1.1) rotateX(10deg) rotateY(10deg);
+  transition: transform 0.3s ease-out;
+}
+ 
+.header p{
+font-style:italic;
+font-size:30px;
+  color: #e9ac57;
+  margin-left:35%;
+}
+
+.headerimg img{
+  margin-bottom:0;
+  top:0;
+  margin-left:65%;
+}
+.crud a{
+  color:#ebb074;
+  margin-left:50%;
+  font-size:xx-large;
+  display:inline-block;
+}
+
+.crud a:hover{
+  transform:scale(0.9);
+}
+
+.footer{
+  float:right;
+  font-size:medium;
+  color:brown;
+}
+
+.content{
+  position:center;
+  left: 79px;
+  top: 270px;
+  margin-top: 40px;
+  margin-left:2rem;
+  text-align: centre;
+  justify-content:center;
+  font:"underlined";
+}
+.content h3{
+  font-size:4rem;
+  color:rgb(99, 26, 1);
+}
+
+.content p{
+  font-size:2rem;
+  color:#a74402;
+}
+
+.pi img{
+    align-content:left;
+    width:70px;
+    height:60px;
+    image-rendering:cyclic;
+    border-image-width:0px;
+    border-top-right-radius:10% ;
+    border-bottom-right-radius:10%;
+   border-top-left-radius:30%;
+    border-top-right-radius:30%;
+    border-bottom-left-radius:30%;
+    border-bottom-right-radius:30%;
+}
+body p{
+    font-family:lucida;
+    color:rgb(7, 7, 7);
+    font-size:1rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+.loc {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #8a391a91;
+  }
+  
+.loc h2{
+      font-family:lucida;
+      font-size:20px;
+     color:honeydew;
+}
+.loc h4{
+      font-family:lucida;
+      font-size:1rem;
+     color:honeydew;
+}
+
+.loc p{
+       font-family: cursive;
+       font-size:10px;
+}
+
+
+.loc h3{
+        font-family:'Courier New', Courier, monospace;
+        font-size:15px;
+        color:honeydew;
+}
+ </style>
