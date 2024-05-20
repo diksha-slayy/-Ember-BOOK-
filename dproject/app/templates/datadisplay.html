@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appssss</title>
+</head>
+<style>
+body{
+     background-image: url('https://cdn.broadsheet.com.au/cache/80/10/8010a70e804feb79df77308109dd2da5.jpg');
+    background-size:contain;
+    backdrop-filter: blur(3px);
+  }
+.header h2{
+  color:rgb(255, 254, 254);
+  font-size:30px;
+  margin-left:39%;
+  font-style:italic;
+  padding:0;
+}
+.card a{
+  display: inline-block;
+    padding: 0.375rem 0.75rem;
+    margin: 0;
+    background-color: #572e00;
+    border:0.9px solid #635003;
+    border-radius:1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+}
+.content a{
+  color:#a37e50;
+  font-size:15PX;
+  display:inline-block;
+}
+.content h6{
+  font-size:25px;
+  margin-bottom: 0;
+  color:#a37137;  font-family: cursive;
+
+}
+
+.content a:hover{
+  transform:scale(0.9);
+}
+
+.header p{
+  font-style:italic;
+font-size:40px;
+color: #e9ac57;
+margin-left:31%;
+}
+
+.deals{
+  margin-left:41%; 
+}
+
+.deals h1{
+  font-size:29px;
+  color:aliceblue;
+}
+
+.deals p{
+  font-size:15px;
+  color:aliceblue;
+}
+
+
+marquee {
+  width: 500px;
+  height: 50px;
+  background-color: #893308;
+  color: #f08630;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+}
+</style>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+
+
+<div class="ember">
+  <h2>~~Ember ^BOOK&~*</h2>
+</div>
+<div class="header">
+  <p>My Fav fictional characters: 'wink'</p></div>
+<div class="content"><h3>Hello!</h3>
+  <p>Welcome to the Ember BOOKs store!<br>
+  <u>Go and find your books~></u></p>
+</div>
+<div class="deals">
+  <h1>BEST DEALS!<h1>
+  <p><marquee behavior="scroll" direction="left">>We have the best deals for you!</marquee></p></div>
+<div class="card-container">
+  <ul>
+    {% for deals in deal %}
+            <li class="card">
+                 <h1>{{ deals.title }} By {{ deals.author }}</h1>
+                   <p>original Price : {{ deals.original_price}}</p>
+                   <p>Discount ( in %) : {{ deals.discount}}</p>
+                 <p>Genre : {{ deals.genre }}</p>
+                  <a href="">less goo read it</a> 
+            </li>
+    {% endfor %}
+        </ul>
+</div>
+<div class="content">
+   <h6>DROP!</h6>
+  <a href = "{% url 'create-room' %}">Drop your thoughts here!</a></div>
+ <div class="card-container">
+  <ul>
+    {% for x in mymembers %}
+      <li class="card"><b>{{x.firstname}} {{x.lastname}}</b>
+      <p>When?? : {{x.joined_date}}</p>
+      <p>Your Thoughts : {{x.about}}</p>
+      <p>How can we contact u! : {{x.phone}}</p>
+      <a href="{% url 'update-room' x.id %}">Edit</a>
+      <a href="{% url 'delete-room' x.id %}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class ='footer'>
+  <footer>
+    <p>&copy;2024 Ember BOOKs</p>
+  </footer>
+  
+</div>
+{% endblock %}
+</body>
+</html>
+
+{% comment %} above code the for loop one ul one onlyyyy  is to display the models data we created in cmd on admin okkkk {% endcomment %}
+{% comment %} in above lines other than for loop lines and ul lines we are extending the html file main.html in which 
+we have navbar content connected and here we are doing template inheritance {% endcomment %}

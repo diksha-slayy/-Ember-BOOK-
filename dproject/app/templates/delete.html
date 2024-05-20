@@ -1,0 +1,76 @@
+<style>
+
+body{
+    background-image:url('https://i.pinimg.com/736x/65/bc/69/65bc69a52a3f552051357e1342c28a7e.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(1px);
+}
+.delete-container {
+    text-align: center;
+    margin: 100px auto;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #af4b23df;
+    box-shadow: 5px 5px 8px rgb(111, 42, 8);
+    border: 5px solid #702c02;
+}
+
+.delete-container p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.delete-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #954606;
+    border: 0.9px solid #642800;
+    border-radius:1.7rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e99c4f;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.delete-container a:hover {
+    transform: scale(0.9);
+    background-color: #6b3a00;
+}
+
+.delete-container input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top:20px;
+    background-color: #954606;
+    border: 0.9px solid #642800;
+    border-radius:1.7rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e99c4f;
+}
+
+input[type="submit"]:hover {
+    background-color: #6b3a00;
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+</style>
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="delete-container">
+    <p><b>Are you sure you want to delete "{{obj}}"?</b></p>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="submit" value="confirm"/>
+        
+        <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+
+{% block content %}
+<style>
+
+body{
+      background-image: url('https://wallpapercave.com/wp/wp8442990.jpg');
+      background-size:contain;
+      backdrop-filter: blur(1px);}
+
+form {
+    text-align: center;
+    margin: 100px auto;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #af4b23df;
+    box-shadow: 5px 5px 8px rgb(111, 42, 8);
+    border: 5px solid #702c02;
+}
+
+form :hover{
+    transform: translateY(-4px);
+}
+
+form a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6f3404;
+    color: rgb(244, 173, 52);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+display: block;
+margin-top: 20px;
+font-weight: bold;
+color:rgb(244, 173, 52);
+}
+    
+input[type="text"], 
+input[type="email"], 
+input[type="number"], 
+textarea {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ac500996;
+border-radius: 5px;
+box-sizing: border-box;
+}
+    
+input[type="submit"] {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #6f3404;
+color: rgb(244, 173, 52);
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+    
+input[type="submit"]:hover {
+background-color: #6f3303;
+transform: translateY(-4px);
+}  
+</style>
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="submit"/>
+        <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
+    </form>
+</div>
+{% endblock content %}
+
+{% comment %} now we will do the final change in view  {% endcomment %}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appssss</title>
+</head>
+<style>
+body{
+          background-image: url('https://i.ytimg.com/vi/i7VtlaLN9UY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHOBYAC0AWKAgwIABABGGUgYShUMA8=&rs=AOn4CLDqLIXWDRojxr9HWjf0_RTlZ7MItQ');
+          background-size:contain;
+          display: flex;
+    flex-direction: column;
+}
+.new-container ul {
+        list-style-type: none;
+        padding:0;
+        margin:0;
+        display: flex;
+        flex-wrap: wrap;
+}    
+.sb {
+        margin: 10px;
+}
+    
+.sb img {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+}
+    
+.sb {
+        margin-top:40px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: #8a3a1aa8;
+        border: 1px solid #762902;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 5px 5px 8px rgba(146, 51, 4, 0.1);
+}
+    
+.sb h1 {
+        font-size:29px;
+        margin-top: 0;
+}
+    
+.sb p {
+        font-size: 15px;
+        padding: 10px;
+        margin:0;
+}
+    
+.sb a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #572e00;
+        border: 0.9px solid #635003;
+        border-radius: 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 10px;
+}
+    
+.sb a:hover {
+        transform: scale(0.9);
+}
+    
+.sb:hover {
+        transform: scale(1.05);
+        cursor:pointer;
+}
+
+.header h2{
+        font-style:italic;
+    font-size:30px;
+      color: #e9ac57;
+      margin-left:43%;
+      margin-top:0;
+} 
+      
+      
+.add a{
+    color:#ebb074;
+    margin-left:41%;
+    font-size:xx-large;
+    display:inline-block;}
+      
+.add a:hover{
+    transform:scale(0.9);
+}
+.footer {
+    padding:1rem 0;
+    text-align: center;
+    border-top: 3px solid #752902;
+    justify-content:flex-end;
+
+}
+
+.footer p {
+    margin: 0;
+    color:rgb(255, 255, 255);
+    margin-bottom: 0;
+}
+
+</style>
+<body>
+    
+{% extends 'main.html' %}
+{% block content %}
+
+<div class = "ember"><h2>~~Ember ^BOOK&~*</h2>
+</div>
+<div class="header">
+<h2>Fiction Books</h2></div>
+<div class="add"><a href = "{% url 'fict' %}">-> Add your Books Here!</a></div>
+<div> <button><a href = "home"><b>Home</b></a></button></div>
+<div class="new-container">
+<ul>
+    {% for fiction in fictions %}
+    {% comment %} <div class="new">
+    <img src="https://m.media-amazon.com/images/I/71rUM41lGfL._SL1499_.jpg" alt="Novel 1"></div> {% endcomment %}
+    <li class="sb">
+        <img src="https://m.media-amazon.com/images/I/71rUM41lGfL._SL1499_.jpg" alt="Novel 1">
+              <h1><i>{{ fiction.title }}</i></h1>
+
+               <p>By {{ fiction.author }}</p>
+              <p>Price: {{ fiction.price}}</p>
+
+               <p>Genre : {{ fiction.genre }}</p>
+               <a href="{% url 'updatefict-room' fiction.id %}">Edit</a>
+               <a href="{% url 'deletefict-room' fiction.id %}">Delete</a>
+               <a href="">less goo read it</a> 
+            </li>
+    {% endfor %}
+</ul>
+</div>
+<div class ='footer'>
+    <footer>
+      <p>&copy;2024 Ember BOOKs</p>
+    </footer>
+</div>
+{% endblock %}
+
+</body>
+</html>
